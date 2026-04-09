@@ -8,3 +8,4 @@ tokenizers>=0.13.0
 huggingface_hub
 python-dotenv
 scikit-learn
+wandb
