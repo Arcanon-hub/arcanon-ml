@@ -92,7 +92,6 @@ def train():
 
     training_args = TrainingArguments(
         output_dir=args.output_dir,
-        overwrite_output_dir=True,
         evaluation_strategy="epoch" if args.validation_file else "no",
         per_device_train_batch_size=args.per_device_train_batch_size,
         gradient_accumulation_steps=args.gradient_accumulation_steps,
@@ -102,7 +101,6 @@ def train():
         logging_steps=50,
         save_steps=args.save_steps,
         fp16=use_fp16,
-        use_mps_device=(device == "mps"),
         report_to=args.report_to,
         push_to_hub=args.push_to_hub,
         hub_model_id=args.hub_model_id,

@@ -12,9 +12,10 @@ The current Arcanon Scanner uses tree-sitter to extract service connections. How
 
 ---
 
-## 2. Data Pipeline: "The Stack v2" Streaming & Filtering
+### 2. Data Pipeline: "The Stack v2" Streaming & Filtering
 
-We will use the Hugging Face `datasets` library in **streaming mode** to avoid downloading the multi-terabyte dataset.
+We will use the Hugging Face `datasets` library in **streaming mode** to avoid downloading the multi-terabyte dataset (`bigcode/the-stack-v2`).
+
 
 ### 2.1 Language & Metadata Filters
 - **Scope:** Filter for `lang` in `[rust, go, python, java, typescript, javascript, ruby, csharp]`.

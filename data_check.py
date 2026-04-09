@@ -16,10 +16,12 @@ def check_data(num_samples=5):
     try:
         # Connect to the dataset
         dataset = load_dataset(
-            "bigcode/the-stack-v2-train-full", 
+            "bigcode/the-stack-v2", 
             streaming=True, 
             split="train",
             token=token
+        )
+
         )
         
         print("Successfully connected to The Stack v2.")

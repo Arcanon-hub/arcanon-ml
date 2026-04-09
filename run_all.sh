@@ -22,6 +22,7 @@ if [ "$RUN_PHASE_1" = "true" ]; then
         --push_to_hub \
         --hub_model_id "$HF_REPO_MLM" \
         --report_to "${REPORT_TO:-none}" \
+        --subset "default" \
         --fp16
 fi
 
