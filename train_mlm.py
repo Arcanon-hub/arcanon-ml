@@ -41,6 +41,16 @@ def train():
     args = parse_args()
     set_seed(args.seed)
     
+    # Explicit WandB Login for automated environments
+    if args.report_to == "wandb":
+        import wandb
+        api_key = os.getenv("WANDB_API_KEY")
+        if api_key:
+            wandb.login(key=api_key)
+            wandb.init(project="arcanon-codebert-mlm", name="phase-1-mlm")
+        else:
+            logger.warning("WANDB_API_KEY not found. WandB logging may fail.")
+    
     # Device detection for M3/NVIDIA/CPU
     if torch.cuda.is_available():
         device = "cuda"
