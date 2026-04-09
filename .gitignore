@@ -205,3 +205,9 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Machine Learning
+checkpoints/
+*.onnx
+wandb/
+.cache/huggingface/
